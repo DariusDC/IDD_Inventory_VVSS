@@ -1,13 +1,13 @@
 package inventory.service;
 
 import inventory.model.*;
-import inventory.repository.InventoryRepository;
+import inventory.repository.InventoryRepositoryFile;
 import javafx.collections.ObservableList;
 
 public class InventoryService {
 
-    private InventoryRepository repo;
-    public InventoryService(InventoryRepository repo){
+    private InventoryRepositoryFile repo;
+    public InventoryService(InventoryRepositoryFile repo){
         this.repo =repo;
     }
 

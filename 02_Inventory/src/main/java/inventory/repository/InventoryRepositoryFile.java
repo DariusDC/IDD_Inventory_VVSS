@@ -2,19 +2,26 @@ package inventory.repository;
 
 
 import inventory.model.*;
+import inventory.validator.PartValidator;
+import inventory.validator.ProductValidator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class InventoryRepository {
+public class InventoryRepositoryFile {
 
 	private static String filename = "data/items.txt";
-	private Inventory inventory;
+	private InventoryRepositoryInMemory inventoryRepositoryInMemory;
 
-	public InventoryRepository(){
-		this.inventory=new Inventory();
+	private PartValidator partValidator;
+	private ProductValidator productValidator;
+
+	public InventoryRepositoryFile(PartValidator partValidator, ProductValidator productValidator) {
+		this.inventoryRepositoryInMemory = new InventoryRepositoryInMemory();
+		this.partValidator=partValidator;
+		this.productValidator=productValidator;
 		readParts();
 		readProducts();
 	}
@@ -38,7 +45,7 @@ public class InventoryRepository {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		inventory.setAllParts(listP);
+		inventoryRepositoryInMemory.setAllParts(listP);
 	}
 
 	private Part getPartFromString(String line){
@@ -48,7 +55,7 @@ public class InventoryRepository {
 		String type=st.nextToken();
 		if (type.equals("I")) {
 			int id= Integer.parseInt(st.nextToken());
-			inventory.setAutoPartId(id);
+			inventoryRepositoryInMemory.setAutoPartId(id);
 			String name= st.nextToken();
 			double price = Double.parseDouble(st.nextToken());
 			int inStock = Integer.parseInt(st.nextToken());
@@ -59,7 +66,7 @@ public class InventoryRepository {
 		}
 		if (type.equals("O")) {
 			int id= Integer.parseInt(st.nextToken());
-			inventory.setAutoPartId(id);
+			inventoryRepositoryInMemory.setAutoPartId(id);
 			String name= st.nextToken();
 			double price = Double.parseDouble(st.nextToken());
 			int inStock = Integer.parseInt(st.nextToken());
@@ -91,7 +98,7 @@ public class InventoryRepository {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		inventory.setProducts(listP);
+		inventoryRepositoryInMemory.setProducts(listP);
 	}
 
 	private Product getProductFromString(String line){
@@ -101,7 +108,7 @@ public class InventoryRepository {
 		String type=st.nextToken();
 		if (type.equals("P")) {
 			int id= Integer.parseInt(st.nextToken());
-			inventory.setAutoProductId(id);
+			inventoryRepositoryInMemory.setAutoProductId(id);
 			String name= st.nextToken();
 			double price = Double.parseDouble(st.nextToken());
 			int inStock = Integer.parseInt(st.nextToken());
@@ -113,7 +120,7 @@ public class InventoryRepository {
 			ObservableList<Part> list= FXCollections.observableArrayList();
 			while (ids.hasMoreTokens()) {
 				String idP = ids.nextToken();
-				Part part = inventory.lookupPart(idP);
+				Part part = inventoryRepositoryInMemory.lookupPart(idP);
 				if (part != null)
 					list.add(part);
 			}
@@ -129,8 +136,8 @@ public class InventoryRepository {
 		File file = new File(filename);
 
 		BufferedWriter bw = null;
-		ObservableList<Part> parts=inventory.getAllParts();
-		ObservableList<Product> products=inventory.getProducts();
+		ObservableList<Part> parts= inventoryRepositoryInMemory.getAllParts();
+		ObservableList<Product> products= inventoryRepositoryInMemory.getProducts();
 
 		try {
 			bw = new BufferedWriter(new FileWriter(file));
@@ -160,63 +167,67 @@ public class InventoryRepository {
 	}
 
 	public void addPart(Part part){
-		inventory.addPart(part);
+		partValidator.validate(part);
+		inventoryRepositoryInMemory.addPart(part);
 		writeAll();
 	}
 
 	public void addProduct(Product product){
-		inventory.addProduct(product);
+		productValidator.validate(product);
+		inventoryRepositoryInMemory.addProduct(product);
 		writeAll();
 	}
 
 	public int getAutoPartId(){
-		return inventory.getAutoPartId();
+		return inventoryRepositoryInMemory.getAutoPartId();
 	}
 
 	public int getAutoProductId(){
-		return inventory.getAutoProductId();
+		return inventoryRepositoryInMemory.getAutoProductId();
 	}
 
 	public ObservableList<Part> getAllParts(){
-		return inventory.getAllParts();
+		return inventoryRepositoryInMemory.getAllParts();
 	}
 
 	public ObservableList<Product> getAllProducts(){
-		return inventory.getProducts();
+		return inventoryRepositoryInMemory.getProducts();
 	}
 
 	public Part lookupPart (String search){
-		return inventory.lookupPart(search);
+		return inventoryRepositoryInMemory.lookupPart(search);
 	}
 
 	public Product lookupProduct (String search){
-		return inventory.lookupProduct(search);
+		return inventoryRepositoryInMemory.lookupProduct(search);
 	}
 
 	public void updatePart(int partIndex, Part part){
-		inventory.updatePart(partIndex, part);
+		partValidator.validate(part);
+		inventoryRepositoryInMemory.updatePart(partIndex, part);
 		writeAll();
 	}
 
 	public void updateProduct(int productIndex, Product product){
-		inventory.updateProduct(productIndex, product);
+		productValidator.validate(product);
+		inventoryRepositoryInMemory.updateProduct(productIndex, product);
 		writeAll();
 	}
 
 	public void deletePart(Part part){
-		inventory.deletePart(part);
+		inventoryRepositoryInMemory.deletePart(part);
 		writeAll();
 	}
 	public void deleteProduct(Product product){
-		inventory.removeProduct(product);
+		inventoryRepositoryInMemory.removeProduct(product);
 		writeAll();
 	}
 
-	public Inventory getInventory(){
-		return inventory;
+	public InventoryRepositoryInMemory getInventory(){
+		return inventoryRepositoryInMemory;
 	}
 
-	public void setInventory(Inventory inventory){
-		this.inventory=inventory;
+	public void setInventory(InventoryRepositoryInMemory inventoryRepositoryInMemory){
+		this.inventoryRepositoryInMemory = inventoryRepositoryInMemory;
 	}
 }

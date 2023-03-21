@@ -4,7 +4,7 @@ package inventory.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class Inventory {
+public class InventoryRepositoryInMemory {
     
     // Declare fields
     private ObservableList<Product> products;
@@ -12,7 +12,7 @@ public class Inventory {
     private int autoPartId;
     private int autoProductId;
 
-    public Inventory(){
+    public InventoryRepositoryInMemory(){
         this.products = FXCollections.observableArrayList();
         this.allParts= FXCollections.observableArrayList();
         this.autoProductId=0;
@@ -38,13 +38,13 @@ public class Inventory {
     
     /**
      * Accepts search parameter and if an ID or name matches input, that product is returned
-     * @param searchItem
+     * @param searchNameOrId
      * @return 
      */
-    public Product lookupProduct(String searchItem) {
+    public Product lookupProduct(String searchNameOrId) {
         boolean isFound = false;
         for(Product p: products) {
-            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) return p;
+            if(p.getName().contains(searchNameOrId) || (p.getProductId()+"").equals(searchNameOrId)) return p;
             isFound = true;
         }
         if(isFound == false) {
@@ -93,12 +93,12 @@ public class Inventory {
     
     /**
      * Accepts search parameter and if an ID or name matches input, that part is returned
-     * @param searchItem
+     * @param searchNameOrId
      * @return 
      */
-    public Part lookupPart(String searchItem) {
+    public Part lookupPart(String searchNameOrId) {
         for(Part p:allParts) {
-            if(p.getName().contains(searchItem) || (p.getPartId()+"").equals(searchItem)) return p;
+            if(p.getName().contains(searchNameOrId) || (p.getPartId()+"").equals(searchNameOrId)) return p;
         }
         return null;
     }
