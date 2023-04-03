@@ -79,8 +79,9 @@ public class InventoryRepositoryInMemory {
      * Add new part to observable list allParts
      * @param part 
      */
-    public void addPart(Part part) {
+    public Part addPart(Part part) {
         allParts.add(part);
+        return allParts.get(allParts.size()-1);
     }
     
     /**

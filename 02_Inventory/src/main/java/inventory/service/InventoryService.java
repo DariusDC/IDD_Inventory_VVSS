@@ -11,14 +11,14 @@ public class InventoryService {
         this.repo =repo;
     }
 
-    public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
+    public Part addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
         InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
-        repo.addPart(inhousePart);
+        return repo.addPart(inhousePart);
     }
 
-    public void addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue){
+    public Part addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue){
         OutsourcedPart outsourcedPart = new OutsourcedPart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
-        repo.addPart(outsourcedPart);
+        return repo.addPart(outsourcedPart);
     }
 
     public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts){

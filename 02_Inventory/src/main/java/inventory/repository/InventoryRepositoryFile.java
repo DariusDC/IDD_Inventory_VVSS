@@ -166,10 +166,10 @@ public class InventoryRepositoryFile {
 		}
 	}
 
-	public void addPart(Part part){
+	public Part addPart(Part part){
 		partValidator.validate(part);
-		inventoryRepositoryInMemory.addPart(part);
 		writeAll();
+		return inventoryRepositoryInMemory.addPart(part);
 	}
 
 	public void addProduct(Product product){

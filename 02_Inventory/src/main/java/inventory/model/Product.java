@@ -4,6 +4,8 @@ package inventory.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Objects;
+
 
 public class Product {
     
@@ -145,6 +147,19 @@ public class Product {
             errorMessage += "Product price must be greater than cost of parts. ";
         }
         return errorMessage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return productId == product.productId && Double.compare(product.price, price) == 0 && inStock == product.inStock && min == product.min && max == product.max && Objects.equals(associatedParts, product.associatedParts) && Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(associatedParts, productId, name, price, inStock, min, max);
     }
 
     @Override
