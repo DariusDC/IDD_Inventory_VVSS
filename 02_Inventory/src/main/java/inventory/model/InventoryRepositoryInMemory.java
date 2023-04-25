@@ -44,12 +44,14 @@ public class InventoryRepositoryInMemory {
     public Product lookupProduct(String searchNameOrId) {
         boolean isFound = false;
         for(Product p: products) {
-            if(p.getName().contains(searchNameOrId) || (p.getProductId()+"").equals(searchNameOrId)) return p;
+            if(p.getName().contains(searchNameOrId))
+                return p;
+            if((p.getProductId()+"").equals(searchNameOrId))
+                return p;
             isFound = true;
         }
-        if(isFound == false) {
-            Product product = new Product(0, null, 0.0, 0, 0, 0, null);
-            return product;
+        if(!isFound) {
+            return new Product(0, null, 0.0, 0, 0, 0, null);
         }
         return null;
     }
