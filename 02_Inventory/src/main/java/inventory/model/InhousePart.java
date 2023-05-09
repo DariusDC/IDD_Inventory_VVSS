@@ -26,5 +26,3 @@ public class InhousePart extends Part {
         return "I,"+super.toString()+","+getMachineId();
     }
 }
-
-

@@ -3,12 +3,11 @@ package inventory.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-class InventoryRepositoryInMemoryTest {
-    InventoryRepositoryInMemory repo;
-    InventoryRepositoryInMemory emptyListRepo;
+class InventoryRepositoryMemoryTest {
+    InventoryRepositoryMemory repo;
+    InventoryRepositoryMemory emptyListRepo;
 
     Product prod;
     Product prod2;
@@ -16,7 +15,7 @@ class InventoryRepositoryInMemoryTest {
 
     @BeforeEach
     void setUp() {
-        repo = new InventoryRepositoryInMemory();
+        repo = new InventoryRepositoryMemory();
 
         prod = new Product(1, "nume_gasit", 1.0, 0, 0, 0, null);
         prod2 = new Product(2, "produs_second", 2.0, 0, 0, 0, null);
@@ -26,7 +25,7 @@ class InventoryRepositoryInMemoryTest {
         repo.addProduct(prod2);
         repo.addProduct(prod3);
 
-        emptyListRepo = new InventoryRepositoryInMemory();
+        emptyListRepo = new InventoryRepositoryMemory();
     }
 
     @Test

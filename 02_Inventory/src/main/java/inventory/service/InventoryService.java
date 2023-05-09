@@ -7,21 +7,22 @@ import javafx.collections.ObservableList;
 public class InventoryService {
 
     private InventoryRepositoryFile repo;
-    public InventoryService(InventoryRepositoryFile repo){
-        this.repo =repo;
+
+    public InventoryService(InventoryRepositoryFile repo) {
+        this.repo = repo;
     }
 
-    public Part addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
+    public Part addInhousePart(String name, double price, int inStock, int min, int max, int partDynamicValue) {
         InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
         return repo.addPart(inhousePart);
     }
 
-    public Part addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue){
+    public void addOutsourcePart(String name, double price, int inStock, int min, int max, String partDynamicValue) {
         OutsourcedPart outsourcedPart = new OutsourcedPart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
-        return repo.addPart(outsourcedPart);
+        repo.addPart(outsourcedPart);
     }
 
-    public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts){
+    public void addProduct(String name, double price, int inStock, int min, int max, ObservableList<Part> addParts) {
         Product product = new Product(repo.getAutoProductId(), name, price, inStock, min, max, addParts);
         repo.addProduct(product);
     }
@@ -42,26 +43,26 @@ public class InventoryService {
         return repo.lookupProduct(search);
     }
 
-    public void updateInhousePart(int partIndex, int partId, String name, double price, int inStock, int min, int max, int partDynamicValue){
+    public void updateInhousePart(int partIndex, int partId, String name, double price, int inStock, int min, int max, int partDynamicValue) {
         InhousePart inhousePart = new InhousePart(partId, name, price, inStock, min, max, partDynamicValue);
         repo.updatePart(partIndex, inhousePart);
     }
 
-    public void updateOutsourcedPart(int partIndex, int partId, String name, double price, int inStock, int min, int max, String partDynamicValue){
+    public void updateOutsourcedPart(int partIndex, int partId, String name, double price, int inStock, int min, int max, String partDynamicValue) {
         OutsourcedPart outsourcedPart = new OutsourcedPart(partId, name, price, inStock, min, max, partDynamicValue);
         repo.updatePart(partIndex, outsourcedPart);
     }
 
-    public void updateProduct(int productIndex, int productId, String name, double price, int inStock, int min, int max, ObservableList<Part> addParts){
+    public void updateProduct(int productIndex, int productId, String name, double price, int inStock, int min, int max, ObservableList<Part> addParts) {
         Product product = new Product(productId, name, price, inStock, min, max, addParts);
         repo.updateProduct(productIndex, product);
     }
 
-    public void deletePart(Part part){
+    public void deletePart(Part part) {
         repo.deletePart(part);
     }
 
-    public void deleteProduct(Product product){
+    public void deleteProduct(Product product) {
         repo.deleteProduct(product);
     }
 

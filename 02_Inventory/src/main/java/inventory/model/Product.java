@@ -98,7 +98,7 @@ public class Product {
     
     public Part lookupAssociatedPart(String searchNameOrId) {
         for(Part p:associatedParts) {
-            if(p.getName().contains(searchNameOrId) || new Integer(p.getPartId()).toString().equals(searchNameOrId)) return p;
+            if(p.getName().contains(searchNameOrId) || Integer.toString(p.getPartId()).equals(searchNameOrId)) return p;
         }
         return null;
     }
@@ -140,7 +140,7 @@ public class Product {
         if(inStock > max) {
             errorMessage += "Inventory level is higher than the maximum value. ";
         }
-        if (parts.size() < 1) {
+        if (parts.isEmpty()) {
             errorMessage += "Product must contain at least 1 part. ";
         }
         if (sumOfParts > price) {
@@ -150,21 +150,21 @@ public class Product {
     }
 
     @Override
+    public String toString() {
+        return "P,"+this.productId+","+this.name+","+this.price+","+this.inStock+","+
+                this.min+","+this.max;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return productId == product.productId && Double.compare(product.price, price) == 0 && inStock == product.inStock && min == product.min && max == product.max && Objects.equals(associatedParts, product.associatedParts) && Objects.equals(name, product.name);
+        return getProductId() == product.getProductId() && Double.compare(product.getPrice(), getPrice()) == 0 && getInStock() == product.getInStock() && getMin() == product.getMin() && getMax() == product.getMax() && Objects.equals(getAssociatedParts(), product.getAssociatedParts()) && Objects.equals(getName(), product.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(associatedParts, productId, name, price, inStock, min, max);
-    }
-
-    @Override
-    public String toString() {
-        return "P,"+this.productId+","+this.name+","+this.price+","+this.inStock+","+
-                this.min+","+this.max;
+        return Objects.hash(getAssociatedParts(), getProductId(), getName(), getPrice(), getInStock(), getMin(), getMax());
     }
 }

@@ -6,18 +6,18 @@ import inventory.repository.InventoryRepositoryFile;
 import inventory.validator.PartValidator;
 import inventory.validator.ProductValidator;
 import inventory.validator.ValidationException;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static inventory.validator.PartValidator.*;
 import static inventory.validator.PartValidator.emptyNameErrMsg;
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryServiceTest {
-
     InventoryService service;
 
     @BeforeEach
-    @Timeout(1000 * 60)
     void setUp() {
         PartValidator partValidator = new PartValidator();
         ProductValidator productValidator = new ProductValidator();
@@ -26,15 +26,13 @@ class InventoryServiceTest {
     }
 
     @AfterEach
-    @Disabled
     void tearDown() {
     }
 
     @Test
-    @DisplayName("ECP_1 - OK")
     void addInhousePart_validData_OK_ECP_1() {
         try {
-            //arrange
+            //setup
             Part part=new InhousePart(1,"Piulita", 0.5, 200, 5, 1000, 1);
 
             //act
@@ -49,10 +47,9 @@ class InventoryServiceTest {
     }
 
     @Test
-    @RepeatedTest(2)
     void addInhousePart_validData_OK_ECP_2() {
         try {
-            //arrange
+            //setup
             Part part=new InhousePart(1,"Amortizare", 200, 20, 4, 1000, 5);
 
             //act
@@ -67,7 +64,6 @@ class InventoryServiceTest {
     }
 
     @Test
-    @Tag("Invalid")
     void addInhousePart_InvalidMin_Exception_ECP_1() {
         Exception exception = assertThrows(ValidationException.class, () -> {
             service.addInhousePart("Surub", 1, 200, -5, 1000, 34);
@@ -147,4 +143,5 @@ class InventoryServiceTest {
         String actualMessage = exception.getMessage();
 
         assertEquals(expectedMessage, actualMessage);
-    }}
+    }
+}

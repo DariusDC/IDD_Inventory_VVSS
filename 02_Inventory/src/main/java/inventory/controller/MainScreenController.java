@@ -243,8 +243,7 @@ public class MainScreenController implements Initializable,Controller {
      */
     @FXML
     void handlePartsSearchBtn(ActionEvent event) {
-        String x = partsSearchTxt.getText();
-        partsTableView.getSelectionModel().select(service.lookupPart(x));
+        partsTableView.getSelectionModel().select(service.lookupPart(partsSearchTxt.getText()));
     }
 
     /**
@@ -253,9 +252,7 @@ public class MainScreenController implements Initializable,Controller {
      */
     @FXML
     void handleProductsSearchBtn(ActionEvent event) {
-        String x = productsSearchTxt.getText();
-        productsTableView.getSelectionModel().select(service.lookupProduct(x));
+        productsTableView.getSelectionModel().select(service.lookupProduct(productsSearchTxt.getText()));
     }
 
 }
-

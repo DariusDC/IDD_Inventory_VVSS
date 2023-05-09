@@ -108,21 +108,21 @@ public abstract class Part {
     }
 
     @Override
+    public String toString() {
+        return this.partId+","+this.name+","+this.price+","+this.inStock+","+
+                this.min+","+this.max;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Part part = (Part) o;
-        return partId == part.partId && Double.compare(part.price, price) == 0 && inStock == part.inStock && min == part.min && max == part.max && Objects.equals(name, part.name);
+        return partId == part.partId && Double.compare(part.price, price) == 0 && inStock == part.inStock && min == part.min && max == part.max && name.equals(part.name);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(partId, name, price, inStock, min, max);
-    }
-
-    @Override
-    public String toString() {
-        return this.partId+","+this.name+","+this.price+","+this.inStock+","+
-                this.min+","+this.max;
     }
 }

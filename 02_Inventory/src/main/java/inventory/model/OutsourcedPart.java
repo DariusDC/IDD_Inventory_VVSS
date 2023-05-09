@@ -29,3 +29,4 @@ public class OutsourcedPart extends Part {
     }
 
 }
+

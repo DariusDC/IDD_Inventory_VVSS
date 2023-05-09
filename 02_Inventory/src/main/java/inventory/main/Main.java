@@ -1,4 +1,4 @@
-package inventory;
+package inventory.main;
 
 import inventory.repository.InventoryRepositoryFile;
 import inventory.service.InventoryService;
@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         PartValidator partValidator=new PartValidator();
         ProductValidator productValidator=new ProductValidator();
-        InventoryRepositoryFile repo= new InventoryRepositoryFile(partValidator, productValidator);
+        InventoryRepositoryFile repo= new InventoryRepositoryFile(partValidator,productValidator);
         InventoryService service = new InventoryService(repo);
         System.out.println(service.getAllProducts());
         System.out.println(service.getAllParts());

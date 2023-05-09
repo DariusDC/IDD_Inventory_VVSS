@@ -5,6 +5,7 @@ import inventory.model.InhousePart;
 import inventory.model.OutsourcedPart;
 import inventory.model.Part;
 import inventory.service.InventoryService;
+import inventory.validator.ValidationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +30,6 @@ public class ModifyPartController implements Initializable, Controller {
     private Stage stage;
     private Parent scene;
     private int partIndex= getModifyPartIndex();
-    private String errorMessage = new String();
     private boolean isOutsourced;
     private int partId;
 
@@ -182,25 +182,14 @@ public class ModifyPartController implements Initializable, Controller {
         String min = minTxt.getText();
         String max = maxTxt.getText();
         String partDynamicValue = modifyPartDynamicTxt.getText();
-        errorMessage = "";
         
         try {
-            errorMessage = Part.isValidPart(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), errorMessage);
-            if(errorMessage.length() > 0) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error Adding Part!");
-                alert.setHeaderText("Error!");
-                alert.setContentText(errorMessage);
-                alert.showAndWait();
+            if(isOutsourced == true) {
+                service.updateOutsourcedPart(partIndex, Integer.parseInt(partId), name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), partDynamicValue);
             } else {
-                if(isOutsourced == true) {
-                    service.updateOutsourcedPart(partIndex, Integer.parseInt(partId), name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), partDynamicValue);
-                } else {
-                    service.updateInhousePart(partIndex, Integer.parseInt(partId), name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), Integer.parseInt(partDynamicValue));
-                }
-                displayScene(event, "/fxml/MainScreen.fxml");
+                service.updateInhousePart(partIndex, Integer.parseInt(partId), name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), Integer.parseInt(partDynamicValue));
             }
-
+            displayScene(event, "/fxml/MainScreen.fxml");
         } catch (NumberFormatException e) {
             System.out.println("Blank Fields");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -208,8 +197,15 @@ public class ModifyPartController implements Initializable, Controller {
             alert.setHeaderText("Error");
             alert.setContentText("Form contains blank field.");
             alert.showAndWait();
+        } catch (ValidationException ve){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error Adding Part!");
+            alert.setHeaderText("Error!");
+            alert.setContentText(ve.getMessage());
+            alert.showAndWait();
         }
 
     }
 
 }
+

@@ -4,7 +4,7 @@ package inventory.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class InventoryRepositoryInMemory {
+public class InventoryRepositoryMemory {
     
     // Declare fields
     private ObservableList<Product> products;
@@ -12,7 +12,8 @@ public class InventoryRepositoryInMemory {
     private int autoPartId;
     private int autoProductId;
 
-    public InventoryRepositoryInMemory(){
+
+    public InventoryRepositoryMemory(){
         this.products = FXCollections.observableArrayList();
         this.allParts= FXCollections.observableArrayList();
         this.autoProductId=0;
@@ -55,7 +56,7 @@ public class InventoryRepositoryInMemory {
         }
         return null;
     }
-    
+
     /**
      * Update product at given index
      * @param index
