@@ -14,7 +14,6 @@ import javafx.collections.ObservableList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import static inventory.validator.PartValidator.*;
 import static inventory.validator.PartValidator.emptyNameErrMsg;
