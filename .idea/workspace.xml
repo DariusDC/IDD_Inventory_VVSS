@@ -4,7 +4,107 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="614a78b1-ee22-4ae1-b177-8710f6afa132" name="Changes" comment="" />
+    <list default="true" id="614a78b1-ee22-4ae1-b177-8710f6afa132" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/sonarlint/issuestore/c/2/c22b11e2aba11a33570a540c3adb892902378c1c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/sonarlint/securityhotspotstore/c/2/c22b11e2aba11a33570a540c3adb892902378c1c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/02_Inventory.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/Docs/initial/ClassDiagramDepInventory_v1.0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/Docs/initial/ClassDiagramInventory_v1.0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/Docs/initial/ClassDiagrams.uml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/Docs/initial/RequirementsInventory_v1.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/Docs/initial/RequirementsInventory_v1.0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/data/items.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/AddPartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/AddProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/MainScreenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/ModifyPartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/controller/ModifyProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/InhousePart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/InventoryRepositoryMemory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/InventoryRepositoryMemoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/OutsourcedPart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/Part.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/model/ProductTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/repository/InventoryRepositoryFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/service/InventoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/service/InventoryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/validator/PartValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/validator/ProductValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/validator/ValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/java/inventory/validator/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/data/items.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/fxml/AddPart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/fxml/AddProduct.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/fxml/MainScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/fxml/ModifyPart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/main/resources/fxml/ModifyProduct.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/model/InventoryRepositoryMemoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/service/InventoryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/tests/IntegrationEntityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/tests/IntegrationRepoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/tests/InventoryRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/tests/InventoryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/src/test/java/inventory/tests/ProductTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/Inventory-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/data/items.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/fxml/AddPart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/fxml/AddProduct.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/fxml/MainScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/fxml/ModifyPart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/fxml/ModifyProduct.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/AddPartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/AddProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/MainScreenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/ModifyPartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/controller/ModifyProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/InhousePart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/InventoryRepositoryMemory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/InventoryRepositoryMemoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/OutsourcedPart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/Part.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/model/ProductTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/repository/InventoryRepositoryFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/service/InventoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/service/InventoryServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/validator/PartValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/validator/ProductValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/validator/ValidationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/classes/inventory/validator/Validator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/model/InventoryRepositoryInMemoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/model/InventoryRepositoryMemoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/service/InventoryServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/tests/IntegrationEntityTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/tests/IntegrationRepoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/tests/InventoryRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/tests/InventoryServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_Inventory/target/test-classes/inventory/tests/ProductTest.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +141,11 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="java" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="All in Inventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inventory" />
@@ -80,7 +185,7 @@
       <workItem from="1679421003802" duration="875000" />
       <workItem from="1679422036747" duration="24000" />
       <workItem from="1683662395489" duration="68000" />
-      <workItem from="1683662481839" duration="382000" />
+      <workItem from="1683662481839" duration="2013000" />
     </task>
     <servers />
   </component>
